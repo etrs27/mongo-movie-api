@@ -3,16 +3,16 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/mongomovies');
-let db = mongoose.connection;
-db.on('error', console.error.bind(console, 'Conncetion Error: '))
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Connection Error: '))
 db.once('open', function(){
     console.log('MongoDB Connected.');
 });
 
-let routes = require('./routes/index');
-let movies = require('./routes/movies');
+const routes = require('./routes/index');
+const movies = require('./routes/movies');
 
-let app = express();
+const app = express();
 
 app.use(bodyParser.json());
 

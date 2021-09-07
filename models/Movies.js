@@ -22,7 +22,7 @@ let MovieSchema = mongoose.Schema({
     }
 });
 
-let Movie = module.exports = mongoose.model('Movie', MovieSchema)
+const Movie = module.exports = mongoose.model('Movie', MovieSchema)
 
 module.exports.getMovies = function(callback, limit){
     Movie.find(callback).limit(limit);
